@@ -23,17 +23,17 @@
 
             <div class="bg-white p-6 rounded-xl ">
                 <p class="text-gray-500 text-sm">Total</p>
-                <p class="text-2xl font-bold mt-2">8</p>
+                <p class="text-2xl font-bold mt-2" id="state-total">0</p>
             </div>
 
             <div class="bg-white p-6 rounded-xl ">
                 <p class="text-gray-500 text-sm">Interview</p>
-                <p class="text-2xl font-bold text-green-600 mt-2">0</p>
+                <p class="text-2xl font-bold text-green-600 mt-2" id="state-interview">0</p>
             </div>
 
             <div class="bg-white p-6 rounded-xl ">
                 <p class="text-gray-500 text-sm">Rejected</p>
-                <p class="text-2xl font-bold text-red-600 mt-2">0</p>
+                <p class="text-2xl font-bold text-red-600 mt-2" id="state-reject">0</p>
             </div>
 
         </div>
@@ -61,8 +61,8 @@
         </div>
 
         <!-- Jobs Card -->
-        <div class="hidden jobs-container">
-            <div class=" all-container bg-white p-6 rounded-xl shadow border mb-6 border-none">
+        <div class="hidden jobs-container" id="all-container">
+            <div class="  bg-white p-6 rounded-xl shadow border mb-6 border-none">
                 <h3 class="text-lg font-semibold text-gray-800">
                     Mobile First Corp
                 </h3>
@@ -81,6 +81,42 @@
                 </span>
                 <p class="text-sm text-gray-600">
                     Build cross-platform mobile applications using React Native.
+                </p>
+                <div class="flex gap-3 mt-4">
+                    <button
+                        class="bg-green-100 text-green-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-200 transition border-3">
+                        Interview
+                    </button>
+
+                    <button
+                        class="bg-red-100 text-red-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-200 transition border-3">
+                        Rejected
+                    </button>
+                </div>
+            </div>
+            <div class="  bg-white p-6 rounded-xl shadow border mb-6 border-none">
+                <h3 class="text-lg font-semibold text-gray-800">
+                    WebFlow Agency
+                </h3>
+                <div class="flex justify-between">
+                    <p class="text-gray-600 font-medium">
+                        Web Designer & Developer
+                    </p>
+                    <button class=""> <i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <p class="text-sm text-gray-500 mt-1">
+                    Los Angeles, CA
+                    •
+                    Part-time
+                    •
+                    $80,000 - $120,000
+                </p>
+                <span
+                    class="inline-block bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md mt-3 mb-4">
+                    NOT APPLIED
+                </span>
+                <p class="text-sm text-gray-600">
+                    Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.
                 </p>
                 <div class="flex gap-3 mt-4">
                     <button

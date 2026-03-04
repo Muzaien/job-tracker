@@ -29,6 +29,11 @@ function switchTab(tab) {
             tabName.classList.add(...tabInactive);
         }
     }
+    const pages = [allContainer, interviewContainer, rejectedContainer]; 
+    
+    for (const section of pages ){
+        section.classList.add("hidden");
+    }
 
     if(tab === "all"){
         allContainer.classList.remove("hidden");
@@ -39,4 +44,14 @@ function switchTab(tab) {
         rejectedContainer.classList.remove("hidden");
     }
 }
+
+
+// state update
+const totalStat = document.getElementById("state-total");
+const interviewStat = document.getElementById("state-interview");
+const rejectStat = document.getElementById("state-reject");
+
+totalStat.innerText = allContainer.children.length;
+
+
 switchTab(currentTab);
