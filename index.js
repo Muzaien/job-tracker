@@ -6,6 +6,7 @@ const tabInactive = ["bg-gray-200", "text-gray-600", "text-slate-500"];
 const allContainer = document.getElementById("all-container");
 const interviewContainer = document.getElementById("interview-container");
 const rejectedContainer = document.getElementById("reject-container");
+const emptyStat = document.getElementById("empty-state");
 
 // console.log(allContainer, interviewContainer, rejectedContainer);
 
@@ -29,19 +30,39 @@ function switchTab(tab) {
             tabName.classList.add(...tabInactive);
         }
     }
+
+
+
+
+
     const pages = [allContainer, interviewContainer, rejectedContainer]; 
     
     for (const section of pages ){
         section.classList.add("hidden");
     }
 
+    emptyStat.classList.add("hidden");
+
     if(tab === "all"){
         allContainer.classList.remove("hidden");
+        if(allContainer.children.length <1){
+            emptyStat.classList.remove("hidden");
+
+        }
         
     }else if  (tab=== "interview"){
         interviewContainer.classList.remove("hidden");
+        if(interviewContainer.children.length < 1){
+             emptyStat.classList.remove("hidden");
+
+        }
+        
     }else {
         rejectedContainer.classList.remove("hidden");
+        if(rejectedContainer.children.length < 1){
+             emptyStat.classList.remove("hidden");
+
+        }
     }
 }
 
@@ -130,5 +151,16 @@ function updateStat(){
     totalStat.innerText = allContainer.children.length
     interviewStat.innerText = interviewContainer.children.length
     rejectStat.innerText = rejectedContainer.children.length
+
+    const counts = {
+        all: allContainer.children.length,
+        interview: interviewContainer.children.length,
+        rejected: rejectedContainer.children.length,
+    };
+
+
+    totalStat.innerText = counts ["all"];
+    interviewStat.innerText = counts ["interview"];
+    rejectStat.innerText = counts ["rejected"];
 }
 updateStat();
