@@ -96,16 +96,20 @@ switchTab(currentTab);
 
 document.getElementById("jobs-container-me").addEventListener("click", function(event) {
 
+    const card = event.target.closest(".card");
+
     if (event.target.closest(".interview")) {
-        console.log("Interview clicked");
+        // console.log("Interview clicked", card);
+        interviewContainer.appendChild(card);
     }
 
     else if (event.target.closest(".rejected")) {
-        console.log("Rejected clicked");
+        // console.log("Rejected clicked", card);
+        rejectedContainer.appendChild(card);
     }
 
     else if (event.target.closest(".delete")) {
-        console.log("Delete clicked");
+        console.log("Delete clicked", card);
     }
 
 });
