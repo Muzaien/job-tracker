@@ -36,32 +36,32 @@ function switchTab(tab) {
 
 
 
-    const pages = [allContainer, interviewContainer, rejectedContainer]; 
-    
-    for (const section of pages ){
+    const pages = [allContainer, interviewContainer, rejectedContainer];
+
+    for (const section of pages) {
         section.classList.add("hidden");
     }
 
     emptyStat.classList.add("hidden");
 
-    if(tab === "all"){
+    if (tab === "all") {
         allContainer.classList.remove("hidden");
-        if(allContainer.children.length <1){
+        if (allContainer.children.length < 1) {
             emptyStat.classList.remove("hidden");
 
         }
-        
-    }else if  (tab=== "interview"){
+
+    } else if (tab === "interview") {
         interviewContainer.classList.remove("hidden");
-        if(interviewContainer.children.length < 1){
-             emptyStat.classList.remove("hidden");
+        if (interviewContainer.children.length < 1) {
+            emptyStat.classList.remove("hidden");
 
         }
-        
-    }else {
+
+    } else {
         rejectedContainer.classList.remove("hidden");
-        if(rejectedContainer.children.length < 1){
-             emptyStat.classList.remove("hidden");
+        if (rejectedContainer.children.length < 1) {
+            emptyStat.classList.remove("hidden");
 
         }
     }
@@ -87,12 +87,12 @@ switchTab(currentTab);
 //     const clickedElement = event.target;
 //     if (clickedElement.classList.contains("interview")){
 //         console.log("interview clicked");
-        
-        
+
+
 //     }
 
 // });
-    
+
 // document.getElementById("jobs-container-me").addEventListener("click", function(event) {
 
 //     const interviewBtn = event.target.closest(".interview");
@@ -119,7 +119,7 @@ switchTab(currentTab);
 
 // });
 
-document.getElementById("jobs-container-me").addEventListener("click", function(event) {
+document.getElementById("jobs-container-me").addEventListener("click", function (event) {
 
     const card = event.target.closest(".card");
     const parent = card.parentNode;
@@ -142,8 +142,8 @@ document.getElementById("jobs-container-me").addEventListener("click", function(
     else if (event.target.closest(".delete")) {
         parent.removeChild(card);
         updateStat()
-    
-        
+
+
     }
 
 });
@@ -151,7 +151,7 @@ document.getElementById("jobs-container-me").addEventListener("click", function(
 
 
 
-function updateStat(){
+function updateStat() {
     totalStat.innerText = allContainer.children.length
     interviewStat.innerText = interviewContainer.children.length
     rejectStat.innerText = rejectedContainer.children.length
@@ -166,13 +166,13 @@ function updateStat(){
     totalStat.innerText = counts.all;
     interviewStat.innerText = counts.interview;
     rejectStat.innerText = counts.rejected;
-    availableStat.innerText = counts[currentTab] ;
+    availableStat.innerText = counts[currentTab];
 
-    if(counts[currentTab]<1){
-         emptyStat.classList.remove("hidden");
+    if (counts[currentTab] < 1) {
+        emptyStat.classList.remove("hidden");
 
-    }else{
-         emptyStat.classList.add("hidden");
+    } else {
+        emptyStat.classList.add("hidden");
     }
 }
 updateStat();
