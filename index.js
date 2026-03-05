@@ -97,19 +97,38 @@ switchTab(currentTab);
 document.getElementById("jobs-container-me").addEventListener("click", function(event) {
 
     const card = event.target.closest(".card");
+    const parent = card.parentNode;
+    const status = card.querySelector(".status");
 
     if (event.target.closest(".interview")) {
         // console.log("Interview clicked", card);
+        status.innerText = "Interviewed";
         interviewContainer.appendChild(card);
+        updateStat()
     }
 
     else if (event.target.closest(".rejected")) {
         // console.log("Rejected clicked", card);
+        status.innerText = "Rejected";
         rejectedContainer.appendChild(card);
+        updateStat()
     }
 
     else if (event.target.closest(".delete")) {
-        console.log("Delete clicked", card);
+        parent.removeChild(card);
+        updateStat()
+    
+        
     }
 
 });
+
+
+
+
+function updateStat(){
+    totalStat.innerText = allContainer.children.length
+    interviewStat.innerText = interviewContainer.children.length
+    rejectStat.innerText = rejectedContainer.children.length
+}
+updateStat();
