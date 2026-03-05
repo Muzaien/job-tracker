@@ -55,3 +55,57 @@ totalStat.innerText = allContainer.children.length;
 
 
 switchTab(currentTab);
+
+
+
+// document.getElementById("jobs-container-me").addEventListener("click", function(event){
+//     const clickedElement = event.target;
+//     if (clickedElement.classList.contains("interview")){
+//         console.log("interview clicked");
+        
+        
+//     }
+
+// });
+    
+// document.getElementById("jobs-container-me").addEventListener("click", function(event) {
+
+//     const interviewBtn = event.target.closest(".interview");
+
+//     if (interviewBtn) {
+//         console.log("interview clicked");
+//     }
+
+// });
+
+// document.getElementById("jobs-container-me").addEventListener("click", function(event) {
+
+//     if (event.target.closest(".interview")) {
+//         console.log("Interview clicked");
+//     }
+
+//     if (event.target.closest(".rejected")) {
+//         console.log("Rejected clicked");
+//     }
+
+//     if (event.target.closest(".delete")) {
+//         console.log("Delete clicked");
+//     }
+
+// });
+
+document.getElementById("jobs-container-me").addEventListener("click", function(event) {
+
+    if (event.target.closest(".interview")) {
+        console.log("Interview clicked");
+    }
+
+    else if (event.target.closest(".rejected")) {
+        console.log("Rejected clicked");
+    }
+
+    else if (event.target.closest(".delete")) {
+        console.log("Delete clicked");
+    }
+
+});
